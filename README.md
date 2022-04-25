@@ -1,5 +1,7 @@
 # Next.js Preview Button DatoCMS Plugin
 
+Created by [November Five](https://www.novemberfive.co/)
+
 Plugin that adds quick links to preview & view your DatoCMS on a Next.js site.
 Assumes you have a preview implementation based off of the [official Next.js Preview Mode guide](https://nextjs.org/docs/advanced-features/preview-mode).
 
