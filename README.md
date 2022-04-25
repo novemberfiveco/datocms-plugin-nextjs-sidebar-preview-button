@@ -9,7 +9,7 @@ Assumes you have a preview implementation based off of the [official Next.js Pre
 
 After installing the plugin, you'll need to configure the plugin settings like so:
 
-![Configuration screenshot](./docs/configuration.png)
+![Configuration screenshot](https://github.com/novemberfiveco/datocms-plugin-nextjs-sidebar-preview-button/blob/master/docs/configuration.png?raw=true)
 
 Then on each model you'd like to be able to preview, you'll need to add a JSON field, and under the "Presentation"
 tab, you'll want to select "Next.js Preview Links v2" as the "Field editor", and fill out the entity path for the
