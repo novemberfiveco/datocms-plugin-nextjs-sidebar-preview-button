@@ -16,13 +16,13 @@ tab, you'll want to select "Next.js Preview Links v2" as the "Field editor", and
 given entity on your site. You can sub in any field on the entity using the $field_name, e.g. /blog/$slug or
 /product/$id.
 
-![JSON field screenshot](./docs/field.png)
+![JSON field screenshot](https://github.com/novemberfiveco/datocms-plugin-nextjs-sidebar-preview-button/blob/master/docs/field.png?raw=true)
 
 ## Preview Links
 
 Once you've configured the plugin and added the field to a model, you will be able to see it as a sidebar widget.
 
-![Plugin screenshot](./docs/preview.png)
+![Plugin screenshot](https://github.com/novemberfiveco/datocms-plugin-nextjs-sidebar-preview-button/blob/master/docs/preview.png?raw=true)
 
 A blog post with a slug of `my-first-post` using the configuration from the example above would link to:
 
