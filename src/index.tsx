@@ -14,7 +14,7 @@ connect({
     return [
       {
         id: 'preview',
-        name: 'Preview Button',
+        name: 'Next.js Preview Links v2',
         type: 'editor',
         fieldTypes: ['json'],
         configurable: true,

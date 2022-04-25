@@ -1,6 +1,12 @@
 {
   "name": "datocms-plugin-nextjs-sidebar-preview-button",
   "version": "0.1.0",
+  "homepage": "https://github.com/novemberfiveco/datocms-plugin-nextjs-sidebar-preview-button",
+  "description": "A Datocms plugin to add a preview button to the sidebar of a model",
+  "license": "MIT",
+  "keywords": [
+    "datocms-plugin"
+  ],
   "private": true,
   "devDependencies": {
     "cross-env": "^7.0.3",
@@ -44,9 +50,9 @@
     ]
   },
   "datoCmsPlugin": {
-    "title": "Next.js Sidebar Preview",
-    "previewImage": "",
-    "coverImage": "",
+    "title": "Next.js Sidebar Preview Button",
+    "previewImage": "docs/preview.png",
+    "coverImage": "docs/cover.png",
     "entryPoint": "build/index.html"
   }
 }
