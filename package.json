@@ -7,7 +7,7 @@
   "keywords": [
     "datocms-plugin"
   ],
-  "private": true,
+  "private": false,
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^8.14.0",
