@@ -53,6 +53,7 @@
     "title": "Next.js Sidebar Preview Button",
     "previewImage": "docs/preview.png",
     "coverImage": "docs/cover.png",
-    "entryPoint": "build/index.html"
+    "entryPoint": "build/index.html",
+    "permissions": []
   }
 }
