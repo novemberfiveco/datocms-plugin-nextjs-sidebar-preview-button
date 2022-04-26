@@ -46,6 +46,6 @@ Fork of https://github.com/wbobeirne/datocms-plugin-nextjs-preview & https://git
 
 Important changes:
 
-- Updated to use plugin v2 a
+- Updated to use datocms-plugin v2 framework
 - Fixed bugs with single instances.
 - Remove exit preview button
