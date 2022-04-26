@@ -7,7 +7,7 @@ type PropTypes = {
 };
 // this is how we want to save our settings
 type Parameters = {
-  entityPath: string;
+  entity_path: string;
 };
 
 export function SlugConfigScreen({ ctx }: PropTypes) {
@@ -15,6 +15,7 @@ export function SlugConfigScreen({ ctx }: PropTypes) {
   const [formValues, setFormValues] = useState<Partial<Parameters>>(
     ctx.parameters,
   );
+
   const update = useCallback(
     (field, value) => {
       const newParameters = { ...formValues, [field]: value };
@@ -28,13 +29,13 @@ export function SlugConfigScreen({ ctx }: PropTypes) {
     <Canvas ctx={ctx}>
       <Form>
         <TextField
-          id="entityPath"
-          name="entityPath"
+          id="entity_path"
+          name="entity_path"
           label="Entity path"
           required
-          value={formValues.entityPath ?? ''}
-          error={errors.entityPath}
-          onChange={update.bind(null, 'entityPath')}
+          value={formValues.entity_path ?? ''}
+          error={errors.entity_path}
+          onChange={(newValue: string) => update('entity_path', newValue)}
         />
       </Form>
     </Canvas>

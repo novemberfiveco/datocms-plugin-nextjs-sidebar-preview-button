@@ -1,12 +1,5 @@
 import { RenderConfigScreenCtx } from 'datocms-plugin-sdk';
-import {
-  Canvas,
-  TextField,
-  Form,
-  FieldGroup,
-  Button,
-  SwitchField,
-} from 'datocms-react-ui';
+import { Canvas, TextField, Form, FieldGroup, Button } from 'datocms-react-ui';
 import { Controller, useForm } from 'react-hook-form';
 
 type Props = {
@@ -17,14 +10,12 @@ export type Parameters = {
   siteUrl: string;
   previewPath: string;
   previewSecret?: string;
-  devMode: boolean;
 };
 
 const getDefaultState = (params: Partial<Parameters>): Parameters => ({
   siteUrl: params.siteUrl || '',
   previewPath: params.previewPath || '',
   previewSecret: params.previewSecret || '',
-  devMode: false,
 });
 
 export default function ConfigScreen({ ctx }: Props) {
@@ -93,23 +84,6 @@ export default function ConfigScreen({ ctx }: Props) {
                   id="previewSecret"
                   label="Preview secret"
                   hint="Secret to append to preview link query parameter, leave blank if none is needed"
-                />
-              );
-            }}
-          />
-        </FieldGroup>
-        <FieldGroup>
-          <Controller
-            control={control}
-            name="devMode"
-            render={({ field: { ref: inputRef, ...field }, fieldState }) => {
-              return (
-                <SwitchField
-                  {...field}
-                  error={fieldState.error?.message}
-                  id="devMode"
-                  label="Development mode"
-                  hint="Shows debug messages in console"
                 />
               );
             }}

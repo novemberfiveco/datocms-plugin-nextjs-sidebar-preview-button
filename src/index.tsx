@@ -29,8 +29,8 @@ connect({
     parameters: Record<string, any>,
   ) {
     const errors: Record<string, string> = {};
-    if (!parameters.entityPath) {
-      errors.entityPath = 'Please provide an entity path';
+    if (!parameters.entity_path) {
+      errors.entity_path = 'Please provide an entity path';
     }
     return errors;
   },

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const replaceVariables = (entityPath: string, attributes: ItemAttributes) => {
-  let path = entityPath;
+  let path = entityPath ?? '';
   Object.entries(attributes).forEach(([field, value]) => {
     path = path.replace(`$${field}`, value as string);
   });
@@ -21,12 +21,13 @@ export default function PreviewLink({ ctx }: Props) {
     .parameters as Parameters;
   const multiLang = ctx.site.attributes.locales.length > 1;
   const locale = ctx.locale;
+  const entityPath =
+    (ctx.parameters.entity_path as string | undefined) ??
+    `/${ctx.itemType.attributes.api_key}`;
+  const attributes = useMemo(() => ctx.item?.attributes ?? {}, [ctx.item]);
 
   const previewHref = useMemo(() => {
-    const path = replaceVariables(
-      ctx.parameters.entityPath as string,
-      ctx.item?.attributes ?? {},
-    );
+    const path = replaceVariables(entityPath, attributes);
     const noSlashInstanceUrl = siteUrl.replace(/\/$/, '');
 
     return [
@@ -38,8 +39,8 @@ export default function PreviewLink({ ctx }: Props) {
       previewSecret ? `&secret=${previewSecret}` : '',
     ].join('');
   }, [
-    ctx.item?.attributes,
-    ctx.parameters.entityPath,
+    attributes,
+    entityPath,
     locale,
     multiLang,
     previewPath,
