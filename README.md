@@ -18,6 +18,8 @@ given entity on your site. You can sub in any field on the entity using the $fie
 
 ![JSON field screenshot](https://github.com/novemberfiveco/datocms-plugin-nextjs-sidebar-preview-button/blob/master/docs/field.png?raw=true)
 
+> If you use Next.js [Internationalized Routing](https://nextjs.org/docs/advanced-features/i18n-routing), make sure to enable localization on the JSON field. Routes will be prefixed with the locale from the CMS, e.g. /en/blog/$slug.
+
 ## Preview Links
 
 Once you've configured the plugin and added the field to a model, you will be able to see it as a sidebar widget.
@@ -34,7 +36,7 @@ The query params on the API preview path are not configurable, and are based on 
 
 ## Development
 
-If you want to develop on this extension, the quickest way is to run `yarn start` and manually install it by going to Settings > Plugins,
+If you want to develop on this extension, the quickest way is to run `npm start` and manually install it by going to Settings > Plugins,
 clicking the add button, and clicking "create a private one" in the lower right. Give it:
 
 - A name of your choosing
@@ -49,3 +51,4 @@ Important changes:
 - Updated to use datocms-plugin v2 framework
 - Fixed bugs with single instances.
 - Remove exit preview button
+- Fixed bugs with localization
