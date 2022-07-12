@@ -8,10 +8,27 @@ interface Props {
   ctx: RenderFieldExtensionCtx;
 }
 
-const replaceVariables = (entityPath: string, attributes: ItemAttributes) => {
+const replaceVariables = (
+  entityPath: string,
+  attributes: ItemAttributes,
+  locale: string | null,
+) => {
   let path = entityPath ?? '';
   Object.entries(attributes).forEach(([field, value]) => {
-    path = path.replace(`$${field}`, value as string);
+    if (path.includes(`$${field}`)) {
+      let localizedValue: string;
+      if (
+        typeof value === 'object' &&
+        value !== null &&
+        locale !== null &&
+        locale in value
+      ) {
+        localizedValue = (value as any)[locale];
+      } else {
+        localizedValue = value as string;
+      }
+      path = path.replace(`$${field}`, localizedValue);
+    }
   });
   return path;
 };
@@ -27,7 +44,7 @@ export default function PreviewLink({ ctx }: Props) {
   const attributes = useMemo(() => ctx.item?.attributes ?? {}, [ctx.item]);
 
   const previewHref = useMemo(() => {
-    const path = replaceVariables(entityPath, attributes);
+    const path = replaceVariables(entityPath, attributes, locale);
     const noSlashInstanceUrl = siteUrl.replace(/\/$/, '');
 
     return [
