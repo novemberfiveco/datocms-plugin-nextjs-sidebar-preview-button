@@ -1,3 +1,6 @@
+# Deprecated
+This plugin is not needed anymore since DatoCMS released their own [Web Previews](https://github.com/datocms/plugins/tree/master/web-previews#readme) plugin which is framework agnostic and can easily deal with nested models.
+
 # Next.js Preview Button DatoCMS Plugin
 
 Created by [November Five](https://www.novemberfive.co/)
